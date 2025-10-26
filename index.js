@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import userRouter from "./routers/userRouter.js"
 import bodyParser from "body-parser"
 import jwt from "jsonwebtoken"
+import Productrouter from "./routers/productRouter.js"
 
 const app=express()
 
@@ -72,6 +73,7 @@ app.delete("/",
 })
 
 app.use("/api/users", userRouter)
+app.use("/product", Productrouter)
 
 app.listen(5500,
     ()=>{
